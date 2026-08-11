@@ -1,0 +1,13 @@
+spring.application.name=workflow-app
+
+# PostgreSQL
+spring.datasource.url=jdbc:postgresql://HOST/DBNAME
+spring.datasource.username=USER
+spring.datasource.password=PASSWORD
+
+# JPA
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.open-in-view=false
+spring.jpa.properties.hibernate.format_sql=true
+
+server.port=8080
