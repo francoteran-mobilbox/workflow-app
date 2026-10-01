@@ -1,11 +1,14 @@
 package com.example.workflowapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "regla_usuario")
@@ -42,6 +45,10 @@ public class ReglaUsuario {
 
 	@Column(name = "campo_valor2")
 	private Boolean campoValor2;
+
+	@JsonIgnore
+	@Transient
+	private String nombreDocComun;
 
 	public ReglaUsuario() {
 	}
@@ -124,5 +131,13 @@ public class ReglaUsuario {
 
 	public void setCampoValor2(Boolean campoValor2) {
 		this.campoValor2 = campoValor2;
+	}
+
+	public String getNombreDocComun() {
+		return nombreDocComun;
+	}
+
+	public void setNombreDocComun(String nombreDocComun) {
+		this.nombreDocComun = nombreDocComun;
 	}
 }

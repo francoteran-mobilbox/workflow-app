@@ -12,7 +12,7 @@ public class DocumentoComunActividad {
 	@EmbeddedId
 	private DocumentoComunActividadId id;
 
-	@Column(name = "tiene_metadatos_transferidos", length = 1)
+	@Column(name = "tiene_metadatos_transferidos", length = 10)
 	private String tieneMetadatosTransferidos;
 
 	public DocumentoComunActividad() {

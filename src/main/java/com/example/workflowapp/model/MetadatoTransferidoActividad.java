@@ -1,11 +1,14 @@
 package com.example.workflowapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "metadato_transferido_actividad")
@@ -48,6 +51,9 @@ public class MetadatoTransferidoActividad {
 
 	@Column(name = "codigo_bloque_destino")
 	private String codigoBloqueDestino;
+
+	@Transient
+	private String nombreDocComunOrigen;
 
 	public MetadatoTransferidoActividad() {
 	}
@@ -146,5 +152,13 @@ public class MetadatoTransferidoActividad {
 
 	public void setCodigoBloqueDestino(String codigoBloqueDestino) {
 		this.codigoBloqueDestino = codigoBloqueDestino;
+	}
+
+	public String getNombreDocComunOrigen() {
+		return nombreDocComunOrigen;
+	}
+
+	public void setNombreDocComunOrigen(String nombreDocComunOrigen) {
+		this.nombreDocComunOrigen = nombreDocComunOrigen;
 	}
 }

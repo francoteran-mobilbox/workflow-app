@@ -9,4 +9,6 @@ import java.util.List;
 public interface ProcessRepository extends JpaRepository<WorkflowProcess, Integer> {
 
 	List<ProcessSummary> findByEsUltimaVersionTrue();
+
+	boolean existsByProcessName(String processName);
 }

@@ -1,11 +1,14 @@
 package com.example.workflowapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "timer_proceso")
@@ -48,6 +51,10 @@ public class TimerProceso {
 
 	@Column(name = "hora")
 	private String hora;
+
+	@JsonIgnore
+	@Transient
+	private String nombreDocComun;
 
 	public TimerProceso() {
 	}
@@ -146,5 +153,13 @@ public class TimerProceso {
 
 	public void setHora(String hora) {
 		this.hora = hora;
+	}
+
+	public String getNombreDocComun() {
+		return nombreDocComun;
+	}
+
+	public void setNombreDocComun(String nombreDocComun) {
+		this.nombreDocComun = nombreDocComun;
 	}
 }
