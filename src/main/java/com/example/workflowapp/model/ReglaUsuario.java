@@ -46,7 +46,6 @@ public class ReglaUsuario {
 	@Column(name = "campo_valor2")
 	private Boolean campoValor2;
 
-	@JsonIgnore
 	@Transient
 	private String nombreDocComun;
 

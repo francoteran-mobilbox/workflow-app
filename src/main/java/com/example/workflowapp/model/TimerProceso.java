@@ -52,7 +52,6 @@ public class TimerProceso {
 	@Column(name = "hora")
 	private String hora;
 
-	@JsonIgnore
 	@Transient
 	private String nombreDocComun;
 
